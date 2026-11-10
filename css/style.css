@@ -7,7 +7,7 @@ html:has(.menu:popover-open) {
   overflow: hidden;
 } /* Le curseur se transforme en main quand on est au-dessus d'un élément cliquable */
 .burger {
-  cursor: pointer;
+  cursor: pointer; 
 } /* Il ajoute une transition lors de l'ouverture du menu */
 .menu {
   /* … on complète le bloc existant … */
@@ -23,17 +23,17 @@ html:has(.menu:popover-open) {
   .menu:popover-open {
     opacity: 0;
   }
-}
+} /* Style de départ pour la transition */
 @starting-style {
   .menu:popover-open .burger--close {
     transform: none;
   }
 }
-
+/* Lorsque que l'on clique sur le bouton il y a une transition qui tourne le logo a 90 degrés en 400ms */
 .menu:popover-open .burger--close {
   transform: rotate(90deg);
   transition: 400ms;
-}
+} /* Si l'utilisateur a réduit le mouvement dans ses paramètres, lorsque qu'on clique sur le bouton il n'y a pas de transition */
 @media (prefers-reduced-motion: reduce) {
   .menu,
   .menu .burger--close {
